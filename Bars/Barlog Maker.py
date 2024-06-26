@@ -9,10 +9,10 @@ import numpy as np
 
 # Change only the values to the right of the colons. This will be used for the legend labels.
 legend_labels = {
-    'input': 'Positive Control',
-    'pre_exposure': 'Positive Control (Liquid)',
-    'post_exposure': 'Sample (Dry)',
-    'post_exposure_liquid': 'Sample (Liquid)'
+    'input': 'Input Bacteria',
+    'pre_exposure': 'Input Bacteria + Media',
+    'post_exposure': 'Input Bacteria + Dried Disinfectant',
+    'post_exposure_liquid': 'Input Bacteria + Liquid Disinfectant'
 }
 
 # Recognize the Excel file with the prefix "barlog" in the current directory
@@ -98,8 +98,8 @@ for sheet_name in xls.sheet_names:
     ax.legend(loc='center left', bbox_to_anchor=(1, 0.5))
 
     # Add notes text below the graph
-    notes_text = "Notes: Bars marked with an asterisk (*) are less then or equal to 2,000 CFU/ml."
-    plt.figtext(0.77, 0.38, notes_text, ha="left", fontsize=8, wrap=True)
+    notes_text = "Asterisk - Limit of detection"
+    plt.figtext(0.69, 0.4, notes_text, ha="left", fontsize=8, wrap=True)
     plt.tight_layout()
     
     # Save the figure and show the plot
